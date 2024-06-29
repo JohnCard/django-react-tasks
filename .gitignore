@@ -1,0 +1,95 @@
+# General
+.DS_Store
+.env
+*.log
+
+# Python/Django
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.cover
+*.py,cover
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.log
+db.sqlite3
+instance/
+.scrapy
+media/
+staticfiles/
+local_settings.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# MySQL
+*.sql
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# React/Node
+client/node_modules/
+client/npm-debug.log
+client/yarn-debug.log
+client/yarn-error.log
+client/package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Vercel
+.vercel
+
+# IDEs and editors
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+*~
+.vscode/
+.history
+
+# Test coverage
+coverage/
+*.cover
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Local environment variables
+.env.local
+.env.*.local
+.vscode/settings.json

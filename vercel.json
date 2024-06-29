@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "django_crud_api/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb" }
+      },
+      {
+        "src": "client/package.json",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "django_crud_api/wsgi.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/client/$1"
+      }
+    ]
+  }
+  
