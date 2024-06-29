@@ -1,1 +1,1 @@
-web: gunicorn django_crud_api.wsgi:app --log-file -
+web: gunicorn django_crud_api.wsgi:application --log-file -
