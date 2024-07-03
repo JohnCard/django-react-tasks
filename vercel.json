@@ -9,6 +9,10 @@
       {
         "src": "client/package.json",
         "use": "@vercel/static-build"
+      },
+      {
+        "src": "django_crud_api/manage.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
@@ -19,6 +23,14 @@
       {
         "src": "/(.*)",
         "dest": "/client/$1"
+      },
+      {
+        "src": "/static/(.*)",
+        "dest": "/staticfiles/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "manage.py"
       }
     ]
   }
