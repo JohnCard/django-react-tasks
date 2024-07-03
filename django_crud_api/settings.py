@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 # env = environ.Env(
 #     ALLOWED_HOSTS=(list, []),
@@ -36,8 +35,8 @@ SECRET_KEY='5eb7e2a26dfb16ce99ea08299910c8ee576764c2f1d7c81a74c2d433f82cadd3'
 DEBUG = True
 
 # ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
-# ALLOWED_HOSTS = ['django-task-app.vercel.app']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['django-task-app.vercel.app']
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -68,10 +67,26 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_crud_api.urls'
 
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [BASE_DIR / 'templates'],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,22 +105,22 @@ WSGI_APPLICATION = 'django_crud_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'uChVQyiBOeZOTSlLql1f',
-#         'HOST': 'containers-us-west-196.railway.app',
-#         'PORT': '6625',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'uChVQyiBOeZOTSlLql1f',
+        'HOST': 'containers-us-west-196.railway.app',
+        'PORT': '6625',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES['default'] = dj_database_url.parse('postgresql://django_db_kqh2_user:F8LS131QRrCR9CyI1a8bzTweJ1Aj8LE5@dpg-cq2c6jtds78s73eboikg-a.oregon-postgres.render.com/django_db_kqh2')
 
@@ -148,8 +163,10 @@ USE_TZ = True
 #     BASE_DIR / "static",
 # )
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
